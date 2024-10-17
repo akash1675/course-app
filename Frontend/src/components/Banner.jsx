@@ -10,7 +10,7 @@ function Banner() {
           <div className="space-y-12">
             <h1 className="text-4xl font-bold">
               Hello, welcomes here to learn something{" "}
-              <span className="text-pink-500">new everyday!!</span>
+              <span className="text-amber-500">new everyday!!</span>
             </h1>
             <p>consectetur adipisicing elit. Non veritatis, saepe corporis tempora excepturi in fugiat voluptatem amet, nulla nobis itaque, reiciendis perspiciatis voluptatum? Ullam id voluptatibus ipsam atque facili.</p>
             <label className="input input-bordered flex items-center gap-2">
