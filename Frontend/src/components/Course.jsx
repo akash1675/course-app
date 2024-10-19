@@ -1,14 +1,33 @@
-import React from 'react'
-import list from "../assets/list.json"
+import React, { useEffect, useState } from 'react'
+// import list from "../assets/list.json"
+import axios from "axios";
 import Cards from "./Cards"
 import { Link } from "react-router-dom"
 
 function Course() {
+  const [book, setBook]=useState([]);
+  
+  useEffect(() => {
+    const getBook = async ()=> {
+      try{
+      const response =  await axios.get("http://localhost:4001/book")
+      console.log(response.data);
+      setBook(response.data);
+      }
+      catch(error){
+        console.log(error);
+      }
+    }
+    getBook();
+
+  },[])
+
+
   return (
     <>
       <div className='max-w-screen-2*1 container mx-auto md:px-20 px-4 '>
         <div className='mt-28 items-center justify-center text-center'>
-          <h1 className='text-2xl md:text-4xl'>We're delighted to have you <spam className="text-amber-500" >Here! :)</spam></h1>
+          <h1 className='text-2xl md:text-4xl'>We're delighted to have you <span className="text-amber-500" >Here! :)</span></h1>
           <p className='mt-12'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis rerum nihil quas suscipit cum quibusdam obcaecati autem beatae aliquam blanditiis quidem officia dolorum debitis ducimus porro hic inventore, ut minus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus ad, fuga laudantium deleniti facere consectetur dolor. Illum facilis omnis voluptates distinctio iste id officia ullam nisi vero. Tempore, mollitia.</p>
           <Link to="/" >
             <button className='mt-6 bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-700 duration-300 '>Back</button>
@@ -17,7 +36,7 @@ function Course() {
         </div>
         <div className='mt-12  grid grid-cols-1 md:grid-cols-3  '>
           {
-            list.map((item) => (
+            book.map((item) => (
               <Cards item={item} key={item.id}></Cards>
             ))
           }
