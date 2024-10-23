@@ -24,6 +24,7 @@ function SignUp() {
             // alert("signup successfully");
             toast.success('signup successfully');
             navigate(from,{replace:"true"});
+             window.location.reload();
          }
          localStorage.setItem("Users", JSON.stringify(res.data.user));
         
@@ -81,8 +82,8 @@ function SignUp() {
                      {errors.password && (<span className='text-sm text-red-500'>This field is is required</span>)}
                   </div>
                   {/* Button */}
-                  <div className='flex justify-around mt-4 '>
-                     <button className='bg-amber-500 text-white rounded-md px-3 py-1 hover:bg-amber-700 duration-200'>Signup</button>
+                  <div className='flex justify-between mt-8 '>
+                     <button className='bg-slate-500 text-white rounded-md px-3 py-2  hover:bg-amber-700 duration-200'>Signup</button>
                      <p className='text-xl'>Have account? <button onClick={() => document.getElementById("my_modal_3").showModal()} className='underline text-blue-500 cursor-pointer'>Login</button>
                         <Login></Login>
                      </p>

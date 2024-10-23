@@ -49,7 +49,7 @@ function ContactUs() {
 
                      {/* Button */}
                      <div className='flex justify-around mt-4 '>
-                        <button className='bg-amber-900 text-white rounded-md px-3 py-1 hover:bg-amber-700 duration-200'>Submit</button>
+                        <button className='bg-slate-500 text-white rounded-md px-3 py-1 hover:bg-amber-700 duration-200'>Submit</button>
                      </div>
                   </form>
                </div>

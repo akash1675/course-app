@@ -31,7 +31,7 @@ function Login() {
             console.log(err);
             // alert("Error: " + err.response.data.message);
             toast.error("Error: " + err.response.data.message);
-            setTimeout(()=>{},2000)
+            setTimeout(()=>{},1000)
          }
       })
    };
@@ -67,8 +67,8 @@ function Login() {
                      {errors.password && (<span className='text-sm text-red-500'>This field is is required</span>)}
                   </div>
                   {/* Button */}
-                  <div className='flex justify-around mt-4'>
-                     <button className='bg-amber-500 text-white rounded-md px-3 py-1 hover:bg-amber-700 duration-200'>Login</button>
+                  <div className='flex justify-between mt-8'>
+                     <button className='bg-slate-500 text-white rounded-md px-3 py-1 hover:bg-amber-700 duration-200'>Login</button>
                      <p>Not Registerd? {" "}<Link to="/signup" className='underline text-blue-500 cursor-pointer'>SignUp</Link>{" "}</p>
                   </div>
                </form>

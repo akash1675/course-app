@@ -15,7 +15,7 @@ const FreeBook = () => {
          try {
             const response = await axios.get("http://localhost:4001/book")
             // console.log(response.data);
-            setBook(response.data.filter((data) => data.category === "free"));
+            setBook(response.data.filter((data) => data.category === "paid"));
          }
          catch (error) {
             console.log(error);
@@ -68,9 +68,9 @@ const FreeBook = () => {
       <>
          <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
             <div>
-               <h1 className="font-bold text-xl">Free Offered Courses</h1>
+               <h1 className="font-bold text-xl">Course Catalog</h1>
                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores enim nulla sit debitis porro cumque recusandae fuga ea? Excepturi reiciendis animi.
+               Experience Interactive LIVE and Self-Paced Courses, guided by industry-leading experts, with personalized attention to inspire out-of-the-box thinking, foster conceptual clarity, and spark creativity and innovation.
                </p>
             </div>
 

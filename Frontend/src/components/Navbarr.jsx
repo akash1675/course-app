@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 function Navbarr() {
    const [authUser, setAuthuser] = useAuth();
@@ -27,16 +28,13 @@ function Navbarr() {
    const navItems = (
       <>
          <li>
-            <a href="/">Home</a>
+            <Link to={"/"}>Home</Link>
          </li>
          <li>
-            <a href="/course">Course</a>
+            <Link to={"/course"}>Course</Link>
          </li>
          <li>
-            <a href="/contact">Contact</a>
-         </li>
-         <li>
-            <a href="">About</a>
+            <Link to={"/contact"}>Contact</Link>
          </li>
       </>
    );
@@ -45,8 +43,8 @@ function Navbarr() {
    return (
       <div className={`max-w-screen-2*1 container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50 ${sticky ? "sticky-navbar shadow-md bg-base-200 duration-300 transition-all ease-in-out" : " "
          }`}>
-         <div className="navbar">
-            <div className="navbar-start">
+         <div className="navbar ">
+            <div className="navbar-center">
                {/* for mobile */}
                <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,16 +67,16 @@ function Navbarr() {
                      {navItems}
                   </ul>
                </div>
-               <a className="text-2xl font-bold cursor-pointer">BookStore</a>
+               <a className="text-2xl font-bold cursor-pointer">Learnify</a>
             </div>
-            <div className="navbar-end space-x-3">
+            <div className=" navbar space-x-3">
                <div className="navbar-center hidden lg:flex">
                   <ul className="menu menu-horizontal px-1">
                      {navItems}
                   </ul>
                </div>
                {/* search button */}
-               <div className="hidden md:block ">
+               <div className=" hidden md:block ">
                   <label className="px-3 py-1 border rounded-md flex items-center gap-2  ">
                      <input type="text" className="grow outline-none dark:bg-slate-900 dark:text-white" placeholder="Search" />
                      <svg
@@ -94,7 +92,7 @@ function Navbarr() {
                   </label>
                </div>
                {/* toggle button */}
-               <div>
+               <div className="navbar navbar-end">
                   <label className="swap swap-rotate">
                      {/* this hidden checkbox controls the state */}
                      <input type="checkbox" className="theme-controller" value="synthwave" />
